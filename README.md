@@ -110,3 +110,12 @@ To manage and organize resources effectively, Azure follows a structured hierarc
 
 ### 📌 Visual Summary:
 
+Tenant
+└── Management Group
+└── Subscription
+└── Resource Group
+└── Azure Resources
+
+Note: An Azure image is a template that contains a pre-installed operating system
+
+
