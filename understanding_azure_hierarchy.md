@@ -1,20 +1,3 @@
-# Azure-cloud-journey
-A comprehensive documentation of my learning journey and hands-on experience with Microsoft Azure Cloud. This repository includes step-by-step guides, configurations, best practices, mini-projects, troubleshooting notes, and key concepts explored while building cloud-native solutions on Azure.
-
-# Azure Cloud – Key Infrastructure Terms (Beginner Guide)
-
-- **Geo**: A large geographical area (e.g., US, Europe) used to meet data residency and compliance needs.
-
-- **Region**: A specific location within a Geo where Azure offers cloud services (e.g., Central India).
-
-- **Availability Zone**: A group of separate datacenters within a region, designed for high availability and fault tolerance (minimum of 3 per supported region).
-
-- **Data Center**: A physical facility that houses Azure’s computing infrastructure like servers and networking equipment.
-
-- **Rack**: A storage unit inside a datacenter that holds servers and hardware in an organized setup.
-
-- **Server**: A physical or virtual machine that provides computing resources for Azure services.
-
 # Azure Core Concepts – Logical Structure and Governance
 
 ## 🧾 Tenant
