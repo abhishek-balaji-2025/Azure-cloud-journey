@@ -51,3 +51,62 @@ A **resource** in Azure is **any service or component** you create and manage in
 - Databases
 - App Services
 - Networking components
+
+## 🧠 Azure Virtual Machines – Series vs. Size
+
+When configuring a Virtual Machine (VM) in Azure, it's important to understand the difference between **series** and **size**:
+
+### ✅ Size
+**Size** refers to the **computational power and specifications** of the virtual machine. This includes:
+- Number of **vCPUs**
+- Amount of **RAM**
+- **Storage throughput**
+- **Network bandwidth**
+
+The **size** determines the performance capabilities of the VM.
+
+---
+
+### ✅ Series
+**Series** refers to the **category or family** of the VM, based on the **underlying physical hardware** and what the VM is **optimized for**. Each series is tailored for specific use cases:
+
+- **D-series**: General-purpose workloads  
+- **E-series**: Memory-intensive applications  
+- **F-series**: Compute-optimized workloads  
+- **N-series**: GPU-based workloads (e.g., AI, rendering)  
+- **B-series**: Burstable workloads for cost savings
+
+---
+
+### 📌 Summary
+- **Size = How powerful the VM is**
+- **Series = What the VM is designed and optimized for**
+
+## 🧱 Azure Resource Hierarchy
+
+To manage and organize resources effectively, Azure follows a structured hierarchy:
+
+1. **Azure Tenant**
+   - The top-level identity boundary.
+   - Created automatically when you sign up for Azure.
+   - Manages users, groups, and access through Azure Active Directory.
+
+2. **Management Groups**
+   - Optional layer used to group multiple subscriptions.
+   - Ideal for applying governance (policies, RBAC) across subscriptions at scale.
+
+3. **Subscriptions**
+   - Containers for deploying Azure resources.
+   - Defines billing, quotas, and access control boundaries.
+
+4. **Resource Groups**
+   - Logical containers within a subscription.
+   - Used to organize and manage related Azure resources.
+
+5. **Azure Resources**
+   - The actual services and components you create and use (e.g., VMs, storage accounts, databases).
+
+---
+
+### 📌 Visual Summary:
+
