@@ -118,4 +118,45 @@ Tenant
 
 Note: An Azure image is a template that contains a pre-installed operating system
 
+## Azure Cloud Shell: Bash vs PowerShell
+
+When you click on **Azure Cloud Shell**, you're given two options:
+- **Bash** (Azure CLI)
+- **PowerShell** (Azure PowerShell)
+
+### 💭 Which Should You Choose?
+
+It depends on your **background** and **use case**. Here's a breakdown:
+
+---
+
+### ⚙️ Azure PowerShell
+
+- **Preferred by**: Windows users, those comfortable with PowerShell scripting.
+- **Cmdlets**: Uses `Az` module (e.g., `New-AzResourceGroup`).
+- **Best for**: Complex scripting, especially if you're automating across Windows environments or integrating with PowerShell-based tooling.
+- **Syntax style**: Verb-Noun (`Get-AzVM`, `Set-AzContext`)
+
+---
+
+### 🐚 Bash (Azure CLI)
+
+- **Preferred by**: Linux/macOS users, DevOps engineers, developers.
+- **Commands**: Uses `az` command-line tool (e.g., `az group create`).
+- **Best for**: Lightweight tasks, quick interactions, scripting in shell scripts.
+- **Syntax style**: Unix-style (`az vm list`, `az login`, `az group create`)
+
+---
+
+### ✅ Recommendation
+
+- If you're comfortable with **PowerShell**, go for **Azure PowerShell**.
+- If you prefer **Linux-style scripting or use Azure across platforms**, go for **Bash (Azure CLI)**.
+
+Note:
+1. `mstsc /v:PublicIP`  
+   → Opens Remote Desktop Connection to a Windows VM using its **public IP address**.
+
+2. `Install-WindowsFeature -Name Web-Server -IncludeManagementTools`  
+   → Installs the **IIS Web Server** role along with its management tools on a Windows Server using PowerShell.
 
