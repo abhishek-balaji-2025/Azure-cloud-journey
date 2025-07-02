@@ -243,3 +243,48 @@ To ensure **clean, secure, and reusable** deployments from the captured image.
 - **Service Models** define *what* you consume: Infrastructure, Platform, or Software.
 - **Deployment Models** define *where* it runs: Public, Private, or Hybrid environment.
 
+## Azure Scaling Concepts
+
+Azure supports two types of scaling:
+
+### 1. Horizontal Scaling (Scale Out / Scale In)
+- **Definition**: Adjusting the number of virtual machines.
+- **Scale Out**: Add more VMs to handle increased load.
+- **Scale In**: Remove VMs when demand decreases.
+- **Best For**: Load-balanced applications, stateless services.
+
+### 2. Vertical Scaling (Scale Up / Scale Down)
+- **Definition**: Changing the size (resources) of an existing VM.
+- **Scale Up**: Move to a VM with more CPU, RAM, or disk.
+- **Scale Down**: Move to a smaller VM to save costs.
+- **Best For**: Apps that require more compute but can't be distributed across multiple VMs.
+
+## Virtual Machine Scale Sets (VMSS)
+
+**Virtual Machine Scale Sets** is an Azure service used to perform both **horizontal** and **vertical** scaling of virtual machines.
+
+In a VMSS unit, you can define **autoscaling rules** to handle changing workloads automatically.
+
+### How It Works:
+- When traffic enters your application, a **load balancer** distributes it across existing VM instances.
+- As traffic increases, **CPU utilization** rises, potentially degrading performance.
+- To prevent this, a **trigger** activates based on the autoscaling rule.
+- Depending on traffic, the rule may:
+  - **Scale out**: Add more VM instances.
+  - **Scale in**: Remove VM instances to optimize cost and performance.
+- These newly created instances are automatically added to the **backend pool** of the **Standard Load Balancer**, which now distributes traffic equally across the updated group of VMs.
+
+## VMSS and Load Balancer Integration
+
+In Azure, **Virtual Machine Scale Sets (VMSS)** can be used:
+
+- ✅ **With a Load Balancer**:  
+  - Ideal for distributing incoming traffic evenly across VM instances.
+  - Supports both **internal** and **public** load balancers.
+
+- ✅ **Without a Load Balancer**:  
+  - Suitable for background tasks, batch processing, or internal-only workloads.
+  - VM instances can still be accessed directly (e.g., via private IP or custom networking).
+
+> 💡 Using a Load Balancer with VMSS is optional and depends entirely on the application's architecture and traffic requirements.
+
