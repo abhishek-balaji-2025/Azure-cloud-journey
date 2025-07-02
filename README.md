@@ -288,3 +288,23 @@ In Azure, **Virtual Machine Scale Sets (VMSS)** can be used:
 
 > 💡 Using a Load Balancer with VMSS is optional and depends entirely on the application's architecture and traffic requirements.
 
+If you're unable to connect to your Azure VM, you can use the **Redeploy** option to move the VM to a new host (physical server) in the Azure datacenter.
+
+If your virtual machine is in a failed state, you can use the **Reapply** option to re-run the VM's configuration and restore its settings.
+The **Reapply** option is used to change the VM's state from **Failed** back to **Running** by reapplying its configuration.
+
+Redeploy is used when you're unable to connect to your virtual machine; it moves the VM to a new physical host within the same Azure datacenter to resolve underlying hardware or host-level issues.
+
+An Azure virtual machine must have at least one **virtual Network Interface Card (vNIC)** to enable network communication.
+The underlying physical server of course has real NICs, but from the VM's perspective, you're working with virtual NICs that are mapped and managed by Azure’s virtualization layer.
+
+## Note
+In AWS, you need to allocate and associate an Elastic IP for a static public IP.
+In Azure, if you don't specify otherwise, the public IP is static and private IP is dynamic, though you can configure either to be static.
+
+If a virtual machine is facing issues, you can use **Boot Diagnostics** and the **Serial Console** to troubleshoot startup and OS-level problems.
+These tools help when the VM is not accessible via RDP or SSH — especially useful for debugging boot errors, OS crashes, or misconfigured startup scripts.
+
+**Boot Diagnostics** is a troubleshooting tool that captures logs and takes a **screenshot of the VM's boot process**, helping identify issues during startup.
+
+**Serial Console** is another way to troubleshoot a virtual machine, providing direct access to the VM's console without requiring internet connectivity.
