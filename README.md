@@ -308,3 +308,6 @@ These tools help when the VM is not accessible via RDP or SSH — especially use
 **Boot Diagnostics** is a troubleshooting tool that captures logs and takes a **screenshot of the VM's boot process**, helping identify issues during startup.
 
 **Serial Console** is another way to troubleshoot a virtual machine, providing direct access to the VM's console without requiring internet connectivity.
+
+Note: With the help of the **Azure Guest Agent**, you can reset the username and password of a virtual machine from the Azure portal.
+
