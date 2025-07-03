@@ -359,3 +359,64 @@ Azure Blob Storage supports **three types of blobs**, each designed for specific
 > ✅ Choose the blob type based on your data pattern:  
 > Use **Block Blobs** for general file storage, **Append Blobs** for logs, and **Page Blobs** for virtual disks!
 
+# 🌡️ Azure Blob Storage Access Tiers
+
+Azure Blob Storage offers multiple **access tiers** to balance **cost** and **data access frequency**.
+
+---
+
+## 🔥 1. Hot Tier
+
+- 💡 **Best for**: Frequently accessed data
+- 📁 Examples: Web content, databases, real-time logs
+- 💰 **Higher storage cost**, but **low access/read/write cost**
+- ⚡ Fastest access speed
+
+---
+
+## 🧊 2. Cool Tier
+
+- 💡 **Best for**: Infrequently accessed data (but still needs fast retrieval)
+- 📁 Examples: Monthly backups, older app data, long-term project files
+- 💰 **Lower storage cost** than Hot, **higher access/read cost**
+- 🕒 Ideal for data accessed once every 30+ days
+
+---
+
+## 🧊❄️ 3. Cold Tier *(newer tier in preview or region-limited)*
+
+- 💡 **Best for**: Rarely accessed data, but cheaper than Cool and faster than Archive
+- 📁 Examples: Cold backups, legal hold data, seldom-used compliance files
+- 💰 **Cheaper than Cool**, retrieval latency in hours, not seconds
+
+---
+
+## 🧊 4. Archive Tier
+
+- 💡 **Best for**: Archival data — data you almost never access
+- 📁 Examples: Compliance records, medical data, historical logs
+- 💤 **Very low storage cost**, **very high access cost**
+- ⏳ Data must be **rehydrated** (unarchived) before access (can take hours)
+
+---
+
+## 🧾 Comparison Table
+
+| Tier     | Access Frequency    | Storage Cost | Access Cost | Retrieval Time |
+|----------|---------------------|---------------|--------------|-----------------|
+| **Hot**     | Frequent              | High          | Low          | Immediate       |
+| **Cool**    | Infrequent (30+ days) | Medium        | Medium       | Immediate       |
+| **Cold**    | Rare (90+ days)       | Low           | High         | Minutes to hours|
+| **Archive** | Rare (180+ days)      | Lowest        | Highest      | Hours (rehydration) |
+
+---
+
+## 📌 Key Notes
+
+- ✅ You can **change tiers** at any time (e.g., Hot → Archive)
+- 🔁 **Lifecycle Management Policies** can automatically move blobs between tiers
+- 📂 All tiers are only available for **Block Blobs**
+
+---
+
+> 💡 Choose the **tier** based on **how often** you need the data and how long you're storing it.
