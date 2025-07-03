@@ -302,3 +302,54 @@ A Container is a logical folder for storing blobs in Azure Blob Storage.
 You can control who can access it using access levels:
 Private, Blob, or Container.
 
+## Types of blob
+
+# 📦 Azure Blob Storage: Types of Blobs
+
+Azure Blob Storage supports **three types of blobs**, each designed for specific data access and storage needs.
+
+---
+
+## 1️⃣ Block Blob
+
+- 💡 **Mainly used for:** Storing **unstructured data** like images, videos, documents, and backups.
+- 📦 Data is **divided into blocks** when uploaded.
+- 🏷️ Each block is **uniquely named and indexed** for tracking.
+- 🔁 During **retrieval**, Azure **reassembles the blob** block by block in correct order.
+- 📈 **Ideal for:** Large files, media content, documents, backups.
+
+---
+
+## 2️⃣ Append Blob
+
+- 💡 **Mainly used for:** **Appending data only**, without overwriting existing content.
+- ➕ You can only **add (append)** to the end of the blob.
+- ❌ You **cannot modify or delete** previous content.
+- 📈 **Ideal for:** Logging, telemetry data, audit trails.
+
+---
+
+## 3️⃣ Page Blob
+
+- 💡 **Mainly used for:** Simulating a **physical hard drive**.
+- 📄 Data is stored in **512-byte pages**.
+- 🧠 Optimized for **random read/write I/O**.
+- 🖥️ Used internally to store **Virtual Hard Disks (VHDs)** for Azure Virtual Machines.
+- 📈 **Ideal for:** OS and Data disks, custom VHDs, database workloads.
+
+---
+
+## 🧾 Summary Table
+
+| Blob Type       | Use Case Description                              | Best For                            |
+|------------------|---------------------------------------------------|--------------------------------------|
+| **Block Blob**   | Unstructured data, split into blocks              | Images, videos, documents, backups   |
+| **Append Blob**  | Append-only data model (no overwrites)            | Logs, telemetry, audit trails        |
+| **Page Blob**    | 512-byte page structure for random access         | VM Disks (VHDs), databases, IOPS-heavy workloads |
+
+---
+
+> ✅ Choose the blob type based on your data pattern:  
+> Use **Block Blobs** for general file storage, **Append Blobs** for logs, and **Page Blobs** for virtual disks!
+
+
